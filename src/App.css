@@ -38,11 +38,7 @@ body {
   overflow: hidden;
 }
 
-.glass-card:hover {
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
-  background: rgba(255, 255, 255, 0.35);
-  transform: perspective(600px) rotateY(8deg) scale(1.04);
-}
+
 
 h1, h2, h3, h4, h5, h6 {
   color: #222831;

@@ -1,0 +1,144 @@
+.books-header {
+	position: sticky;
+	top: 0;
+	background: var(--main-header-bg);
+	z-index: 10;
+	padding: 1.5rem 0 1rem 2rem;
+	box-shadow: var(--main-header-shadow);
+	border-bottom: 2px solid var(--main-theme);
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+}
+
+.books-back-btn {
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0.2rem 0.5rem 0.2rem 0;
+	margin-right: 0.5rem;
+	color: var(--main-theme);
+	border-radius: 0.5rem;
+	transition: background 0.15s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.books-back-btn:hover {
+	background: rgba(79,70,229,0.08);
+}
+/* Books page container fills the viewport */
+/* Main theme color */
+:root {
+	--main-theme: #4f46e5; /* Indigo-600 */
+	--main-bg: #4f46e5; /* Use main theme as background */
+	--main-header-bg: #fff;
+	--main-header-shadow: 0 2px 8px rgba(79,70,229,0.08);
+	--glass-bg: rgba(255,255,255,0.18);
+	--glass-blur: 18px;
+	--glass-border: rgba(255,255,255,0.35);
+}
+
+.books-page-container {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	background: var(--main-bg);
+	background: linear-gradient(135deg, var(--main-theme) 0%, #6366f1 100%);
+}
+
+/* Sticky header */
+.books-header {
+	position: sticky;
+	top: 0;
+	background: var(--main-header-bg);
+	z-index: 10;
+	padding: 1.5rem 0 1rem 2rem;
+	box-shadow: var(--main-header-shadow);
+	border-bottom: 2px solid var(--main-theme);
+}
+.books-header h1 {
+	margin: 0;
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--main-theme);
+	letter-spacing: 1px;
+}
+
+/* Grid container: scrollable if more than 2 rows */
+.books-grid-container {
+	flex: 1;
+	overflow-y: auto;
+	padding: 2rem;
+	box-sizing: border-box;
+}
+
+/* Responsive grid: 5 columns, auto rows */
+.books-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	column-gap: 2rem;
+	row-gap: 3rem; /* More vertical gap between rows */
+	width: 100%;
+	max-width: 100vw;
+}
+
+/* Book tile styling */
+.book-tile {
+	background: var(--glass-bg);
+	border-radius: 1rem;
+	box-shadow: 0 4px 24px 0 rgba(79,70,229,0.13);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+	height: 100%;
+	border: 1.5px solid var(--glass-border);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	/* subtle glassmorphism */
+	overflow: hidden;
+	cursor: pointer;
+}
+.book-tile:hover {
+	transform: translateY(-4px) scale(1.03);
+	box-shadow: 0 8px 32px 0 rgba(79,70,229,0.22);
+	border-color: var(--main-theme);
+}
+.book-cover {
+	width: 120px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+	border: 2px solid var(--main-theme);
+	background: #e0e7ff;
+	box-shadow: 0 2px 8px rgba(79,70,229,0.10);
+}
+.book-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--main-theme);
+	text-align: center;
+	margin-top: 0.5rem;
+	letter-spacing: 0.5px;
+}
+
+/* Make sure 2 rows fit without scroll (except header) */
+.books-grid-container {
+	max-height: calc(100vh - 80px); /* adjust 80px if header height changes */
+}
+
+@media (max-width: 900px) {
+	.books-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (max-width: 600px) {
+	.books-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
