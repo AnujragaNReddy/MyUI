@@ -66,6 +66,8 @@ function Dashboard({ onLogout }) {
 						onClick={() => {
 							if (opt.label === 'Chat') navigate('/chat');
 							if (opt.label === 'Books') navigate('/books');
+							if (opt.label === 'Music') navigate('/music');
+							if (opt.label === 'Quotes') navigate('/quotes');
 						}}
 					>
 						<span>{opt.icon}</span>
