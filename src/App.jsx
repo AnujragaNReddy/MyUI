@@ -1,12 +1,18 @@
-import './App.css';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import AuthCard from './screens/Auth/Authentication';
-import Dashboard from './screens/Dashboard/DashBoard';
-import ChatPage from './screens/Chat/ChatPage';
-import Books from './screens/Books/Books';
-import MusicLayout from './screens/Music/MusicLayout';
-import QuoteLayout from './screens/Quotes/QuoteLayout';
+import "./App.css";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import AuthCard from "./screens/Auth/Authentication";
+import Dashboard from "./screens/Dashboard/DashBoard";
+import ChatPage from "./screens/Chat/ChatPage";
+import Books from "./screens/Books/Books";
+import MusicLayout from "./screens/Music/MusicLayout";
+import QuoteLayout from "./screens/Quotes/QuoteLayout";
+import Wallpaper from "./screens/Wallpapers/Wallpapers";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,6 +38,7 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/music" element={<MusicLayout />} />
         <Route path="/quotes" element={<QuoteLayout />} />
+        <Route path="/wallpapers" element={<Wallpaper />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
