@@ -1,0 +1,33 @@
+.font-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.font-option-tile {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.font-option-tile:hover {
+  background: #4a8ef0;
+  color: #fff;
+  transform: scale(1.01);
+}
+
+.font-name {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.font-preview {
+  font-size: 18px;
+  line-height: 1.3;
+}
